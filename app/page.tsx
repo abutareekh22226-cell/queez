@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import Quiz from './components/Quiz';
 
 const prisma = new PrismaClient();
+// Force re-build
 
 // Fetch questions from the database on the server
 async function getQuestions() {
