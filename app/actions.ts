@@ -38,8 +38,10 @@ export async function addQuestion(formData: FormData) {
             },
         });
         revalidatePath('/dashboard');
+        return { success: true, message: 'تم إضافة السؤال بنجاح!' };
     } catch (error) {
         console.error("Failed to create question:", error);
+        return { success: false, message: 'فشل في إنشاء السؤال.' };
     }
 }
 
