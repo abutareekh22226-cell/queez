@@ -87,7 +87,9 @@ export async function deleteQuestion(questionId: number) {
             include: { options: true }, // Ensure options are deleted as well
         });
         revalidatePath('/dashboard');
+        return { success: true, message: 'Question deleted successfully.' };
     } catch (error) {
         console.error("Failed to delete question:", error);
+        return { success: false, message: 'Failed to delete question.' };
     }
 }
